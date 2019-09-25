@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="matematyka">
+<meta name="keywords" content="js css html matematyka egzamin">
+<meta name="robots" content="index">
+<meta name="author" content="monika">
+<meta http-equiv="content-language" content="pl">
+
+<link rel="stylesheet" type="text/css" href="./css/matematyka.css">
+<title>
+matematyka_js
+</title>
+</head>
+<body>
+<div id="kontener">
+<div id="baner">
+<img class="foto" src="./images/baner.jpg" alt="baner matematyka" 
+onclick="funkcja1('Strona domowa')">
+</div>
+<div id="kolumny">
+<div id="lewa">
+<p class="p" onclick="funkcja1('Zawartość podstron')">MENU </p>
+<p id="jeden" onclick="funkcja1('PESEL XX0218XXX60')">Opis</p>
+<p id="dwa" onclick="pytanie()">Jaka to liczba?</p>
+<p id="trzy" onclick="wypisanie()">Liczby całkowite z zakresu</p>
+
+
+</div>
+<div id="prawa">
+<p id="tresc" class="p">
+ 
+</p>
+
+</div>
+</div>
+
+
+<script>
+ 
+function funkcja1 (liczba) {
+    document.getElementById('tresc').innerHTML = liczba;
+console.log("cokolwiek");
+}
+ 
+function pytanie(){
+do {
+	var haslo=prompt("podaj haslo")
+	if (haslo !== "liczba")
+		alert("NIEPRAWIDLOWE HASLO, sprobuj jeszcze raz")
+} while (haslo !="liczba")
+
+var odpowiedz=parseInt(prompt("podaj liczbę"));
+if (odpowiedz!==odpowiedz)
+alert("nie podałeś liczby, spróbuj raz jeszcze");
+else if (odpowiedz==0) 
+	funkcja1("podałeś liczbę 0")
+else if (odpowiedz<0) 
+	funkcja1("podałeś liczbę ujemną")
+else 
+	funkcja1("podałeś liczbę dodatnią")
+
+}; 
+
+function wypisanie() {
+var a=parseInt(prompt("podaj liczbę początkową"));
+var b=a;
+do b=parseInt(prompt("podaj liczbę końcową")); while (b==a)
+var wyswietl=""
+if (a>b) {for (i=a;i>=b;i--) {wyswietl=wyswietl+(" "+i);}}
+else if (a<b) {for (i=a;i<=b;i++) {wyswietl=wyswietl+(" "+i);}}
+funkcja1(wyswietl);
+
+}
+
+
+
+ 
+</script>
+
+</body>
+</html>
